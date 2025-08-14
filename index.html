@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Informe: Conversor de Sistemas Numéricos con Interfaz Gráfica</title>
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --panel:#111827; /* gray-900 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e5e7eb; /* gray-200 */
+      --accent:#22d3ee; /* cyan-400 */
+      --accent2:#a78bfa; /* violet-400 */
+      --border:#1f2937; /* gray-800 */
+    }
+    html,body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";line-height:1.6;margin:0}
+    .container{max-width:1000px;margin:auto;padding:32px}
+    header{background:linear-gradient(90deg,rgba(34,211,238,.15),rgba(167,139,250,.15));border:1px solid var(--border);padding:28px;border-radius:18px;margin-bottom:28px}
+    h1{margin:0 0 6px 0;font-size:clamp(24px,4vw,38px);letter-spacing:.4px}
+    .subtitle{color:var(--muted)}
+    nav{margin:22px 0 34px}
+    nav a{display:inline-block;margin:4px 8px 4px 0;padding:8px 12px;border:1px solid var(--border);border-radius:999px;color:var(--text);text-decoration:none}
+    nav a:hover{border-color:var(--accent);color:var(--accent)}
+    section{background:rgba(17,24,39,.6);border:1px solid var(--border);border-radius:16px;padding:22px;margin:18px 0}
+    h2{margin-top:0;color:var(--accent)}
+    h3{color:var(--accent2)}
+    ul,ol{padding-left:22px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .def-list{display:grid;grid-template-columns:220px 1fr;gap:10px 16px}
+    .def-list dt{font-weight:700;color:var(--accent2)}
+    .def-list dd{margin:0}
+    table{width:100%;border-collapse:collapse;background:rgba(2,6,23,.4);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+    th,td{border-bottom:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+    th{background:rgba(2,6,23,.5)}
+    tbody tr:hover{background:rgba(2,6,23,.6)}
+    .badge{display:inline-block;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.35);color:var(--accent);padding:2px 8px;border-radius:999px;font-size:12px}
+    .placeholder{color:var(--muted);font-style:italic}
+    footer{color:var(--muted);text-align:center;margin:28px 0}
+    @media print{
+      :root{--bg:#fff;--panel:#fff;--text:#000;--muted:#444;--border:#e5e7eb;--accent:#0ea5e9;--accent2:#7c3aed}
+      header,section,nav{box-shadow:none}
+      nav a{border:none;padding:0;margin-right:12px}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Conversor de Sistemas Numéricos con Interfaz Gráfica</h1>
+      <p class="subtitle">Informe técnico</p>
+      <small class="subtitle">Autor: Fabricio Quillupangui | Fecha: 21 Agosto 2025</small>
+    </header>
+
+    <nav aria-label="Tabla de contenido">
+      <a href="#introduccion">Introducción</a>
+      <a href="#objetivo-general">Objetivo general</a>
+      <a href="#objetivos-especificos">Objetivos específicos</a>
+      <a href="#marco-teorico">Marco teórico</a>
+      <a href="#tabla-conversiones">Tabla de conversiones</a>
+      <a href="#procedimiento">Procedimiento</a>
+      <a href="#preguntas">Preguntas y respuestas</a>
+      <a href="#conclusiones">Conclusiones</a>
+      <a href="#anexos">Anexos</a>
+    </nav>
+
+    <section id="introduccion">
+      <h2>Introducción</h2>
+      <p>
+        Los sistemas de numeración constituyen la base de la representación de datos en ciencias de la computación y electrónica digital. 
+        Un <strong>conversor de sistemas numéricos</strong> con <em>interfaz gráfica</em> facilita el aprendizaje y el trabajo técnico al permitir transformar valores entre 
+        <span class="badge">decimal</span>, <span class="badge">binario</span>, <span class="badge">octal</span> y <span class="badge">hexadecimal</span> de forma rápida, precisa y visual. 
+        Este informe describe el propósito, fundamentos teóricos y estructura funcional del conversor, además de incluir una tabla con los métodos de conversión más usados y un banco de preguntas guía.
+      </p>
+    </section>
+
+    <section id="objetivo-general">
+      <h2>Objetivo general</h2>
+      <p>
+        Diseñar y documentar un conversor de sistemas numéricos con interfaz gráfica que realice conversiones bidireccionales entre los sistemas decimal, binario, octal y hexadecimal, asegurando exactitud, usabilidad y soporte educativo.
+      </p>
+    </section>
+
+    <section id="objetivos-especificos">
+      <h2>Objetivos específicos</h2>
+      <ol>
+        <li>Implementar algoritmos confiables para convertir números entre los cuatro sistemas (base 2, 8, 10 y 16), incluyendo parte entera y fraccionaria.</li>
+        <li>Diseñar una interfaz gráfica clara e intuitiva que valide entradas, muestre resultados y explique el proceso de conversión.</li>
+        <li>Incorporar pruebas de verificación y casos de ejemplo para garantizar la exactitud y el manejo de errores de usuario.</li>
+      </ol>
+    </section>
+
+    <section id="marco-teorico">
+      <h2>Marco teórico</h2>
+      <div class="def-list">
+        <dt>Sistema decimal (base 10)</dt>
+        <dd>Utiliza los dígitos 0–9. Cada posición representa potencias de 10. Es el sistema cotidiano.</dd>
+
+        <dt>Sistema binario (base 2)</dt>
+        <dd>Emplea dígitos 0 y 1. Es el sistema nativo de los computadores por su correspondencia con estados lógicos.</dd>
+
+        <dt>Sistema octal (base 8)</dt>
+        <dd>Usa dígitos 0–7. Es una forma compacta de representar binario agrupando bits en tríos.</dd>
+
+        <dt>Sistema hexadecimal (base 16)</dt>
+        <dd>Usa dígitos 0–9 y letras A–F (10–15). Compacta binario agrupando en cuatríadas (nibbles).</dd>
+
+        <dt>Conversión por divisiones sucesivas</dt>
+        <dd>Método para convertir de base 10 a otra base: dividir la parte entera entre la base y tomar restos hasta llegar a 0.</dd>
+
+        <dt>Conversión por multiplicaciones sucesivas</dt>
+        <dd>Método para fracciones en base 10 a otra base: multiplicar por la base y tomar la parte entera iterativamente.</dd>
+
+        <dt>Conversión por ponderación</dt>
+        <dd>De otra base a decimal: multiplicar cada dígito por la potencia de la base correspondiente y sumar.</dd>
+
+        <dt>Agrupamiento de bits</dt>
+        <dd>Para pasar entre binario ↔ octal (grupos de 3 bits) y binario ↔ hexadecimal (grupos de 4 bits) sin usar decimal intermedio.</dd>
+
+        <dt>Precisión y redondeo</dt>
+        <dd>Las fracciones periódicas pueden requerir cortes o redondeos; es clave indicar la cantidad de dígitos de salida.</dd>
+      </div>
+    </section>
+
+    <section id="tabla-conversiones">
+      <h2>Tabla de conversiones entre sistemas</h2>
+      <p class="subtitle">Incluye método sugerido y un ejemplo por cada par de sistemas.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Desde</th>
+            <th>Hacia</th>
+            <th>Método recomendado</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Decimal a otros -->
+          <tr><td>Decimal (10)</td><td>Binario (2)</td><td>Divisiones sucesivas (entera) / multiplicaciones (fracción)</td><td>25₁₀ → 11001₂</td></tr>
+          <tr><td>Decimal (10)</td><td>Octal (8)</td><td>Divisiones/multiplicaciones en base 8</td><td>64₁₀ → 100₈</td></tr>
+          <tr><td>Decimal (10)</td><td>Hexadecimal (16)</td><td>Divisiones/multiplicaciones en base 16</td><td>255₁₀ → FF₁₆</td></tr>
+
+          <!-- Binario a otros -->
+          <tr><td>Binario (2)</td><td>Decimal (10)</td><td>Ponderación</td><td>10110₂ → 22₁₀</td></tr>
+          <tr><td>Binario (2)</td><td>Octal (8)</td><td>Agrupar en 3 bits</td><td>111010₂ → 72₈</td></tr>
+          <tr><td>Binario (2)</td><td>Hexadecimal (16)</td><td>Agrupar en 4 bits</td><td>10111100₂ → BC₁₆</td></tr>
+
+          <!-- Octal a otros -->
+          <tr><td>Octal (8)</td><td>Decimal (10)</td><td>Ponderación</td><td>157₈ → 111₁₀</td></tr>
+          <tr><td>Octal (8)</td><td>Binario (2)</td><td>Expandir cada dígito a 3 bits</td><td>57₈ → 101111₂</td></tr>
+          <tr><td>Octal (8)</td><td>Hexadecimal (16)</td><td>Octal → Binario (×3 bits) → Hex (×4 bits)</td><td>345₈ → E5₁₆</td></tr>
+
+          <!-- Hex a otros -->
+          <tr><td>Hexadecimal (16)</td><td>Decimal (10)</td><td>Ponderación</td><td>1A3₁₆ → 419₁₀</td></tr>
+          <tr><td>Hexadecimal (16)</td><td>Binario (2)</td><td>Expandir cada dígito a 4 bits</td><td>9F₁₆ → 10011111₂</td></tr>
+          <tr><td>Hexadecimal (16)</td><td>Octal (8)</td><td>Hex → Binario (×4 bits) → Octal (×3 bits)</td><td>7B₁₆ → 173₈</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="procedimiento">
+      <h2>Código usado para la visualización del usuario</h2>
+      <p class="placeholder">
+import tkinter as tk<br>
+from tkinter import ttk  # Importa ttk para usar Combobox y widgets mejorados<br>
+<br>
+# Crear ventana principal<br>
+ventana = tk.Tk()  # Inicializa la ventana principal de Tkinter<br>
+ventana.title("Conversor de Sistemas Numéricos")  # Establece el título de la ventana<br>
+ventana.geometry("400x620")  # Define el tamaño de la ventana (ancho x alto)<br>
+ventana.resizable(False, False)  # Desactiva el cambio de tamaño de la ventana<br>
+ventana.configure(bg="#e0f7fa")  # Color de fondo de la ventana<br>
+<br>
+# Variables para manejar el número y el contador de dígitos<br>
+numero_actual = tk.StringVar(value="")  # Almacena el número ingresado por el usuario<br>
+contador_actual = tk.StringVar(value="0/30")  # Muestra la cantidad de dígitos ingresados<br>
+limites = {  # Limites máximos de dígitos por sistema numérico<br>
+    "Binario": 30,<br>
+    "Octal": 10,<br>
+    "Decimal": 9,<br>
+    "Hexadecimal": 7<br>
+}<br>
+<br>
+# Función para actualizar el contador y mensaje de límite<br>
+def actualizar_contador():<br>
+    sistema = combo_sistema.get()  # Obtiene el sistema seleccionado en el combobox<br>
+    limite = limites.get(sistema, 30)  # Obtiene el límite de dígitos para ese sistema<br>
+    actual = len(numero_actual.get())  # Calcula la longitud del número ingresado<br>
+    contador_actual.set(f"{actual}/{limite}")  # Actualiza el contador visual<br>
+    if actual >= limite:  # Si se alcanza el límite<br>
+        mensaje_limite.config(text=" Has alcanzado el límite de dígitos")  # Mostrar mensaje<br>
+    else:<br>
+        mensaje_limite.config(text="")  # Limpiar mensaje si no hay límite alcanzado<br>
+<br>
+# Función para agregar un carácter al número actual<br>
+def agregar_caracter(c):<br>
+    sistema = combo_sistema.get()  # Obtiene el sistema seleccionado<br>
+    limite = limites.get(sistema, 30)  # Obtiene el límite de dígitos<br>
+    actual = numero_actual.get()  # Obtiene el número actual<br>
+    if len(actual) < limite:  # Solo agregar si no se supera el límite<br>
+        numero_actual.set(actual + c)  # Concatenar el nuevo carácter<br>
+        actualizar_contador()  # Actualizar contador y mensaje<br>
+<br>
+# Función para borrar el último carácter<br>
+def borrar_uno():<br>
+    actual = numero_actual.get()  # Obtiene el número actual<br>
+    numero_actual.set(actual[:-1])  # Elimina el último carácter<br>
+    actualizar_contador()  # Actualiza el contador<br>
+<br>
+# Función para borrar todo el número y resetear resultados<br>
+def borrar_todo():<br>
+    numero_actual.set("")  # Vacía la variable del número<br>
+    actualizar_contador()  # Actualiza contador a 0<br>
+    mensaje_error.config(text="")  # Limpia mensaje de error<br>
+    # Reinicia los resultados de conversión<br>
+    resultado_decimal.config(text="Decimal: —")<br>
+    resultado_binario.config(text="Binario: —")<br>
+    resultado_octal.config(text="Octal: —")<br>
+    resultado_hex.config(text="Hexadecimal: —")<br>
+<br>
+# Función para habilitar/deshabilitar botones según sistema seleccionado<br>
+def actualizar_botones(event=None):<br>
+    sistema = combo_sistema.get()  # Sistema seleccionado<br>
+    for boton in botones_teclado:  # Itera sobre todos los botones del teclado<br>
+        c = boton["text"]  # Obtiene el texto del botón<br>
+        activo = False  # Por defecto, botón desactivado<br>
+        if sistema == "Binario":<br>
+            activo = c in ['0', '1']  # Solo 0 y 1 activos<br>
+        elif sistema == "Octal":<br>
+            activo = c in [str(i) for i in range(8)]  # 0-7 activos<br>
+        elif sistema == "Decimal":<br>
+            activo = c in [str(i) for i in range(10)]  # 0-9 activos<br>
+        elif sistema == "Hexadecimal":<br>
+            activo = True  # Todos activos<br>
+<br>
+        # Configura el estado y color de cada botón<br>
+        if activo:<br>
+            boton.config(state="normal", relief="raised", fg="white")<br>
+            boton.config(bg="#4CAF50" if c.isdigit() else "#FF9800")  # Verde para dígitos, naranja para letras<br>
+        else:<br>
+            boton.config(state="disabled", relief="flat", bg="#cfd8dc", fg="#555")  # Gris deshabilitado<br>
+    borrar_todo()  # Limpia el número al cambiar de sistema<br>
+<br>
+# Crear título de la ventana<br>
+titulo = tk.Label(ventana, text="Conversor de Sistemas Numéricos", font=("Arial", 14, "bold"), bg="#e0f7fa")<br>
+titulo.pack(pady=10)  # Empaqueta el título con espacio vertical<br>
+<br>
+# Cuadro de entrada para mostrar el número<br>
+entry_numero = tk.Entry(ventana, textvariable=numero_actual, font=("Courier", 18), justify="center", state="readonly", readonlybackground="white")<br>
+entry_numero.pack(pady=(5, 2), ipady=5, ipadx=5)  # Empaquetado con padding interno<br>
+<br>
+# Contador de caracteres<br>
+label_contador = tk.Label(ventana, textvariable=contador_actual, font=("Arial", 10), bg="#e0f7fa")<br>
+label_contador.pack()<br>
+<br>
+# Mensaje de límite de dígitos<br>
+mensaje_limite = tk.Label(ventana, text="", fg="red", bg="#e0f7fa", font=("Arial", 9, "italic"))<br>
+mensaje_limite.pack(pady=(0, 5))<br>
+<br>
+# Frame para selección de sistema<br>
+frame_entrada = tk.Frame(ventana, bg="#e0f7fa")<br>
+frame_entrada.pack(pady=5)<br>
+tk.Label(frame_entrada, text="Sistema:", bg="#e0f7fa").grid(row=0, column=0, padx=5)<br>
+sistemas = ["Decimal", "Binario", "Octal", "Hexadecimal"]  # Opciones del combobox<br>
+combo_sistema = ttk.Combobox(frame_entrada, values=sistemas, state="readonly")<br>
+combo_sistema.current(0)  # Valor inicial Decimal<br>
+combo_sistema.grid(row=0, column=1)<br>
+combo_sistema.bind("<<ComboboxSelected>>", actualizar_botones)  # Llama función al cambiar sistema<br>
+<br>
+# Frame para botones de caracteres<br>
+frame_botones = tk.Frame(ventana, bg="#e0f7fa")<br>
+frame_botones.pack(pady=10)<br>
+<br>
+caracteres = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',<br>
+              'A', 'B', 'C', 'D', 'E', 'F']  # Caracteres del teclado<br>
+<br>
+botones_teclado = []  # Lista para guardar botones<br>
+fila = 0<br>
+col = 0<br>
+for c in caracteres:  # Crear botones dinámicamente<br>
+    boton = tk.Button(frame_botones, text=c, width=4, command=lambda c=c: agregar_caracter(c))<br>
+    boton.grid(row=fila, column=col, padx=3, pady=3)<br>
+    botones_teclado.append(boton)<br>
+    col += 1<br>
+    if col == 4:  # 4 botones por fila<br>
+        col = 0<br>
+        fila += 1<br>
+<br>
+# Frame para botones de acciones (AC, borrar, igual)<br>
+frame_acciones = tk.Frame(ventana, bg="#e0f7fa")<br>
+frame_acciones.pack(pady=10)<br>
+<br>
+boton_ac = tk.Button(frame_acciones, text="AC", command=borrar_todo, bg="#607d8b", fg="white", width=8)<br>
+boton_ac.grid(row=0, column=0, padx=5)<br>
+<br>
+boton_borrar = tk.Button(frame_acciones, text="←", command=borrar_uno, bg="#f44336", fg="white", width=8)<br>
+boton_borrar.grid(row=0, column=1, padx=5)<br>
+<br>
+boton_igual = tk.Button(frame_acciones, text="=", command=lambda: convertir(), bg="#9C27B0", fg="white", width=8)<br>
+boton_igual.grid(row=0, column=2, padx=5)<br>
+<br>
+# Etiqueta para mostrar errores<br>
+mensaje_error = tk.Label(ventana, text="", fg="red", bg="#e0f7fa")<br>
+mensaje_error.pack()<br>
+<br>
+# Frame para mostrar resultados de conversión<br>
+frame_resultados = tk.Frame(ventana, bg="#e0f7fa")<br>
+frame_resultados.pack(pady=10)<br>
+<br>
+resultado_decimal = tk.Label(frame_resultados, text="Decimal: —", bg="#e0f7fa", font=("Arial", 10))<br>
+resultado_decimal.pack(pady=2)<br>
+<br>
+resultado_binario = tk.Label(frame_resultados, text="Binario: —", bg="#e0f7fa", font=("Arial", 10))<br>
+resultado_binario.pack(pady=2)<br>
+<br>
+resultado_octal = tk.Label(frame_resultados, text="Octal: —", bg="#e0f7fa", font=("Arial", 10))<br>
+resultado_octal.pack(pady=2)<br>
+<br>
+resultado_hex = tk.Label(frame_resultados, text="Hexadecimal: —", bg="#e0f7fa", font=("Arial", 10))<br>
+resultado_hex.pack(pady=2)<br>
+<br>
+# Función para convertir el número al resto de sistemas<br>
+def convertir():<br>
+    numero_str = numero_actual.get()  # Número ingresado<br>
+    sistema = combo_sistema.get()  # Sistema seleccionado<br>
+<br>
+    try:<br>
+        # Convertir a decimal según sistema<br>
+        if sistema == "Decimal":<br>
+            decimal = int(numero_str)<br>
+        elif sistema == "Binario":<br>
+            decimal = int(numero_str, 2)<br>
+        elif sistema == "Octal":<br>
+            decimal = int(numero_str, 8)<br>
+        elif sistema == "Hexadecimal":<br>
+            decimal = int(numero_str, 16)<br>
+        else:<br>
+            raise ValueError()<br>
+<br>
+        # Mostrar u ocultar etiquetas según sistema origen<br>
+        if sistema != "Decimal":<br>
+            resultado_decimal.config(text=f"Decimal: {decimal}")<br>
+            resultado_decimal.pack(pady=2)<br>
+        else:<br>
+            resultado_decimal.pack_forget()<br>
+<br>
+        if sistema != "Binario":<br>
+            resultado_binario.config(text=f"Binario: {bin(decimal)[2:].zfill(6)}")<br>
+            resultado_binario.pack(pady=2)<br>
+        else:<br>
+            resultado_binario.pack_forget()<br>
+<br>
+        if sistema != "Octal":<br>
+            resultado_octal.config(text=f"Octal: {oct(decimal)[2:]}")<br>
+            resultado_octal.pack(pady=2)<br>
+        else:<br>
+            resultado_octal.pack_forget()<br>
+<br>
+        if sistema != "Hexadecimal":<br>
+            resultado_hex.config(text=f"Hexadecimal: {hex(decimal)[2:].upper()}")<br>
+            resultado_hex.pack(pady=2)<br>
+        else:<br>
+            resultado_hex.pack_forget()<br>
+<br>
+        mensaje_error.config(text="")  # Limpiar mensaje de error<br>
+<br>
+    except ValueError:<br>
+        # Mostrar guiones si el número es inválido<br>
+        resultado_decimal.config(text="Decimal: —")<br>
+        resultado_decimal.pack(pady=2)<br>
+        resultado_binario.config(text="Binario: —")<br>
+        resultado_binario.pack(pady=2)<br>
+        resultado_octal.config(text="Octal: —")<br>
+        resultado_octal.pack(pady=2)<br>
+        resultado_hex.config(text="Hexadecimal: —")<br>
+        resultado_hex.pack(pady=2)<br>
+        mensaje_error.config(text=" Número inválido para el sistema seleccionado.")<br>
+<br>
+# Inicializar botones y contador al iniciar<br>
+actualizar_botones()<br>
+actualizar_contador()<br>
+<br>
+# Ejecutar la ventana<br>
+ventana.mainloop()<br>
+
+
+</p>
+    </section>
+
+    <section id="preguntas">
+      <h2>Preguntas y respuestas</h2>
+      <ol>
+        <li>
+          <h3>¿Qué diferencia hay entre un sistema posicional y uno no posicional?</h3>
+          <p>En los sistemas posicionales (como base 2, 8, 10, 16) el valor del dígito depende de su posición (potencias de la base). En los no posicionales (p. ej., números romanos) no existe esta ponderación posicional.</p>
+        </li>
+        <li>
+          <h3>¿Por qué las computadoras usan binario?</h3>
+          <p>Porque el hardware opera con dos estados físicos estables (alto/bajo, encendido/apagado), que se modelan naturalmente con 0 y 1.</p>
+        </li>
+        <li>
+          <h3>¿Cómo convierto de binario a decimal?</h3>
+          <p>Aplicando ponderación: se multiplica cada bit por 2<sup>posición</sup> y se suman los resultados. Ej.: 10110₂ = 1·2⁴ + 0·2³ + 1·2² + 1·2¹ + 0·2⁰ = 22.</p>
+        </li>
+        <li>
+          <h3>¿Cómo paso de decimal a binario para la parte entera?</h3>
+          <p>Usa divisiones sucesivas entre 2, guardando los restos. El binario se forma leyendo los restos de abajo hacia arriba.</p>
+        </li>
+        <li>
+          <h3>¿Y para la parte fraccionaria decimal a otra base?</h3>
+          <p>Multiplica la fracción por la base y toma la parte entera en cada paso; repite con la nueva fracción hasta lograr la precisión deseada.</p>
+        </li>
+        <li>
+          <h3>¿Cómo convierto rápidamente entre binario y hexadecimal?</h3>
+          <p>Agrupa el binario en bloques de 4 bits desde el punto (agregando ceros a la izquierda si falta) y traduce cada bloque a un dígito hexadecimal.</p>
+        </li>
+        <li>
+          <h3>¿Qué consideraciones hay con fracciones periódicas?</h3>
+          <p>Algunas fracciones no se representan finitamente en otra base. Se define una precisión máxima y se aplica redondeo o truncamiento controlado.</p>
+        </li>
+        <li>
+          <h3>¿Cómo valido entradas en la interfaz gráfica?</h3>
+          <p>Restringe caracteres según la base, notifica errores de formato, y normaliza mayúsculas en hexadecimal; además, muestra mensajes claros de retroalimentación.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="conclusiones">
+      <h2>Conclusiones</h2>
+      <ul>
+        <li>El conversor con interfaz gráfica es una herramienta didáctica eficaz para comprender y aplicar conversiones entre bases numéricas.</li>
+        <li>La elección del método de conversión (ponderación, divisiones/multiplicaciones, agrupamiento de bits) depende del sentido de la transformación y del tipo de dato.</li>
+        <li>La validación de entradas y el manejo explícito de precisión son claves para evitar errores y ambigüedades en resultados.</li>
+        <li>La documentación y los casos de prueba garantizan reproducibilidad, mantenimiento y mejora continua del software.</li>
+      </ul>
+    </section>
+
+    <section id="anexos">
+      <h2>Anexos</h2>
+      <h2><strong> Capturas de pantalla de la aplicación</strong> </h2>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/j51fzJZv/ex1.png"width="400">
+        <figcaption>Figura 1: Pantalla principal para el usuario</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/SxQWbq26/ex2.png"width="400">
+        <figcaption>Figura 2: Comprobación de errores</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/X7srF5q5/ex4.png"width="400">
+        <figcaption>Figura 3: Conversión con selección de número decimal</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/yxWwb2hs/ex5.png"width="400">
+        <figcaption>Figura 4: Conversión con selección de número octal</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/kg7krVvT/ex6.png"width="400">
+        <figcaption>Figura 5: Conversión con selección de número binario</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/qM4mqP6R/ex7.png"width="400">
+        <figcaption>Figura 6:  Conversión con selección de número hexadecimal </figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/W3KvT21h/ex8.png"width="400">
+        <figcaption>Figura 7: Código usado para el funcionamiento del sistema</figcaption>
+        </figure>
+</div>
+    <h2><strong> Enlace de descarga del archivo .exe</strong><a href="  https://drive.google.com/file/d/14cl-T-YL_65qcvLhqEho9dmHGGXXuGQp/view?usp=drive_link
+">Dar click aquí</a> </h2>
+ 
+<h2><strong> Enlace de descarga del archivo del código para el sistema</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
+  </div>
+</body>
+</html>
