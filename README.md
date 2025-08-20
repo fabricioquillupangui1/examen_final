@@ -24,6 +24,56 @@ Está diseñado con fines **educativos y prácticos**, facilitando la comprensi�
 
 ## 🚀 Instrucciones de instalación
 
+## 📌 Requisitos Previos
+| Requisito | Descripción |
+|-----------|-------------|
+| 🌐 Internet | Conexión estable para la descarga |
+| 🖱️ Navegador Web | Google Chrome, Mozilla Firefox, Microsoft Edge u otro |
+| 💾 Espacio en Disco | Espacio suficiente para guardar el archivo `.exe` |
+| 🔒 Antivirus | Recomendado tener un antivirus actualizado para mayor seguridad |
+
+---
+
+## 📥 Pasos para Descargar un Archivo `.exe`
+
+| Paso | Acción | Detalle |
+|------|---------|---------|
+| 1️⃣ | Acceder al sitio web | Ingresar a la página oficial o fuente confiable desde el navegador. |
+| 2️⃣ | Buscar el archivo | Localizar el botón o enlace de descarga del archivo `.exe`. |
+| 3️⃣ | Iniciar descarga | Hacer **clic en “Descargar”** o en el enlace directo al archivo `.exe`. |
+| 4️⃣ | Confirmar la descarga | El navegador puede mostrar un aviso de seguridad. Selecciona **“Conservar”** o **“Mantener de todos modos”** si confías en la fuente. |
+| 5️⃣ | Esperar la descarga | Verifica la barra de progreso en el navegador hasta que termine. |
+| 6️⃣ | Ubicar el archivo | El archivo se guardará en la carpeta **Descargas** (o la que hayas definido). |
+| 7️⃣ | Verificar el archivo | Da doble clic sobre el `.exe` para comprobar que se ejecuta correctamente. |
+
+---
+<h2><strong> Enlace de descarga del archivo .exe</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
+## ⚠️ Recomendaciones de Seguridad
+
+| Recomendación | Explicación |
+|---------------|-------------|
+| ✅ Fuente confiable | Descarga solo desde páginas oficiales o desarrolladores reconocidos. |
+| 🔍 Verifica el nombre | Asegúrate de que el archivo tenga la extensión `.exe` y no algo sospechoso. |
+| 🛡️ Escanea con antivirus | Antes de ejecutar el archivo, analiza con tu antivirus. |
+| ⚠️ Evita sitios piratas | No descargues desde sitios desconocidos o con publicidad excesiva. |
+
+---
+
+## 📂 Ubicación del Archivo Descargado
+Por defecto, los navegadores guardan los archivos en:
+
+- **Windows:** `C:\Usuarios\TuUsuario\Descargas`
+- **Linux:** `/home/usuario/Descargas`
+- **MacOS:** `/Usuarios/tuusuario/Descargas`
+
+---
+
+## 🚀 Ejemplo Visual
+1. Ir al sitio oficial del software.  
+2. Dar clic en **Descargar .exe**.  
+3. Confirmar la descarga en el navegador.  
+4. Ejecutar el archivo desde la carpeta **Descargas**.  
+
 # 📘 Instructivo de Transformaciones de Sistemas Numéricos
 
 Este instructivo explica cómo transformar números entre **Decimal, Binario, Octal y Hexadecimal**.
@@ -124,7 +174,7 @@ Este instructivo explica cómo transformar números entre **Decimal, Binario, Oc
         </figure>
 </div>
  
-<h2><strong> Enlace de descarga del archivo .exe</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
+
  
 <h2><strong> Enlace de descarga del archivo del código para el sistema</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
 
