@@ -117,12 +117,15 @@ Este instructivo explica cómo transformar números entre **Decimal, Binario, Oc
         <figcaption>Figura 6:  Conversión con selección de número hexadecimal </figcaption>
         </figure>
 </div>
-
-<img src="https://i.postimg.cc/W3KvT21h/ex8.png"width="400">
-Figura 7: Código usado para el funcionamiento del sistema</figcaption>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/W3KvT21h/ex8.png"400">
+        <figcaption>Figura 7:  Código usado para el funcionamiento del sistema</figcaption>
+        </figure>
+</div>
  
-    <h2><strong> Enlace de descarga del archivo .exe</strong><a href="  https://drive.google.com/file/d/14cl-T-YL_65qcvLhqEho9dmHGGXXuGQp/view?usp=drive_link
-">Dar click aquí</a> </h2>
+<h2><strong> Enlace de descarga del archivo .exe</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
  
 <h2><strong> Enlace de descarga del archivo del código para el sistema</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
-  
+
+<h2><strong> Enlace del video del exámen teórico</strong><a href="">Dar click aquí</a> </h2>
