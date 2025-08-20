@@ -78,3 +78,51 @@ Este instructivo explica cómo transformar números entre **Decimal, Binario, Oc
 | Octal ↔ Binario  | 1 dígito octal = 3 bits binarios |
 | Hex ↔ Binario    | 1 dígito hex = 4 bits binarios |
 | Octal ↔ Hex      | Pasar por binario como puente |
+
+ <h2>Anexos</h2>
+      <h2><strong> Capturas de pantalla de la aplicación</strong> </h2>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/j51fzJZv/ex1.png"width="400">
+        <figcaption>Figura 1: Pantalla principal para el usuario</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/SxQWbq26/ex2.png"width="400">
+        <figcaption>Figura 2: Comprobación de errores</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/X7srF5q5/ex4.png"width="400">
+        <figcaption>Figura 3: Conversión con selección de número decimal</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/yxWwb2hs/ex5.png"width="400">
+        <figcaption>Figura 4: Conversión con selección de número octal</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/kg7krVvT/ex6.png"width="400">
+        <figcaption>Figura 5: Conversión con selección de número binario</figcaption>
+        </figure>
+</div>
+<div class="contenedor-imagenes">
+        <figure>
+            <img src="https://i.postimg.cc/qM4mqP6R/ex7.png"width="400">
+        <figcaption>Figura 6:  Conversión con selección de número hexadecimal </figcaption>
+        </figure>
+</div>
+
+<img src="https://i.postimg.cc/W3KvT21h/ex8.png"width="400">
+Figura 7: Código usado para el funcionamiento del sistema</figcaption>
+ 
+    <h2><strong> Enlace de descarga del archivo .exe</strong><a href="  https://drive.google.com/file/d/14cl-T-YL_65qcvLhqEho9dmHGGXXuGQp/view?usp=drive_link
+">Dar click aquí</a> </h2>
+ 
+<h2><strong> Enlace de descarga del archivo del código para el sistema</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
+  
