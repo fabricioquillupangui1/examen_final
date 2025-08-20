@@ -59,20 +59,6 @@ Está diseñado con fines **educativos y prácticos**, facilitando la comprensi�
 
 ---
 
-## 📂 Ubicación del Archivo Descargado
-Por defecto, los navegadores guardan los archivos en:
-
-- **Windows:** `C:\Usuarios\TuUsuario\Descargas`
-- **Linux:** `/home/usuario/Descargas`
-- **MacOS:** `/Usuarios/tuusuario/Descargas`
-
----
-
-## 🚀 Ejemplo Visual
-1. Ir al sitio oficial del software.  
-2. Dar clic en **Descargar .exe**.  
-3. Confirmar la descarga en el navegador.  
-4. Ejecutar el archivo desde la carpeta **Descargas**.  
 
 # 📘 Instructivo de Transformaciones de Sistemas Numéricos
 
