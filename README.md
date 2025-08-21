@@ -164,4 +164,4 @@ Este instructivo explica cómo transformar números entre **Decimal, Binario, Oc
  
 <h2><strong> Enlace de descarga del archivo del código para el sistema</strong><a href="https://drive.google.com/file/d/1Fc1htvwyc1VaNYQATO8Sc8QbtgUD_y3S/view?usp=sharing">Dar click aquí</a> </h2>
 
-<h2><strong> Enlace del video del exámen teórico</strong><a href="">Dar click aquí</a> </h2>
+<h2><strong> Enlace del video del exámen teórico</strong><a href="https://youtu.be/QnhZsbT0nJ4">Dar click aquí</a> </h2>
